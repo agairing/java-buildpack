@@ -54,9 +54,7 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
         @droplet.java_opts
-          .add_system_property('java.io.tmpdir', '$TMPDIR')          
-          .add_option('-XX:HeapDumpPath', '$PWD/oom_heapdump.hprof')
-          .add_option('-XX:OnOutOfMemoryError', killjava)
+          .add_system_property('java.io.tmpdir', '$TMPDIR')                    
       end
 
       private
